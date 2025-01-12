@@ -4,9 +4,12 @@ export const Navbar = () => {
   return (
     <nav className="pt-4 px-6 flex items-center justify-between">
       <div className="flex-col hidden lg:flex">
-        <h1 className="text-2xl font-semibold">WSC GitHub Copilot Workshop</h1>
+        <h1 className="text-2xl font-semibold">
+          Sport App GitHub Copilot Workshop
+        </h1>
         <p className="text-muted-foreground">
-          Elevate Your Game with WSC: Where Sports Passion Meets Performance!
+          Elevate Your Game with Contoso Sport: Where Sports Passion Meets
+          Performance!
         </p>
       </div>
       <MobileSidebar />

@@ -1,0 +1,3 @@
+
+Multi file Editing:
+create a route based on the player-info.ts file that fetches only the id, name, team, weight, height, and position properties. in page.tsx generate a component that displays a list of player information with all these fields,Ensure each player is displayed in a separate card - use tailwindcss and shadcn library for styling.
