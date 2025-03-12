@@ -13,8 +13,7 @@ export default async function Home() {
       </div>
       <div>
         <div className="flex flex-row">
-          <h1 className="text-2xl font-bold pr-3">Dear</h1>
-          <Image src="/outbrain.png" alt="logo" width={164} height={48} />
+          <h1 className="text-2xl font-bold pr-3">Hello</h1>
         </div>
         <p className="text-lg">
           We are thrilled to welcome you to our event and are honored to have

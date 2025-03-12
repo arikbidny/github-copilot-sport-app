@@ -1,4 +1,3 @@
-"use client";
 import {
   Card,
   CardDescription,
@@ -8,7 +7,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { useState } from "react";
-CardDescription;
+import axios from "axios";
 
 const ErrorPageFixing = () => {
   const [playerName, setPlayerName] = useState("");
@@ -17,19 +16,21 @@ const ErrorPageFixing = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const response = await fetch("/api/players", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+    const response = await axios.post(
+      "/api/players",
+      {
         name: playerName,
         position: playerPosition,
         team: playerTeam,
-      }),
-    });
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-    if (!response.ok) {
+    if (response.status !== 200) {
       console.error("Failed to create player");
     } else {
       console.log("Player created successfully");

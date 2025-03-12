@@ -1,5 +1,3 @@
-import { NextRequest, NextResponse } from "next/server";
-
 export async function GET(request: NextRequest) {
   const startTime = Date.now();
   const arr = Array.from({ length: 100000 }, () =>

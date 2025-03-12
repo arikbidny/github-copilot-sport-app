@@ -3,7 +3,17 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(request: NextRequest) {
   const url = new URL("https://apiv2.allsportsapi.com/basketball/");
 
+  const params: Record<string, string | number> = {
+
+  if (!apiKey) {
+    return NextResponse.json(
+      { error: "API key is not set" },
+      { status: 500 }
+    );
+  }
+
   const params = {
+    APIkey: apiKey,
     met: "Fixtures",
     APIkey: process.env.NEXT_PUBLIC_NBA_API_KEY,
     from: "2024-10-01",

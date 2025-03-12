@@ -143,9 +143,10 @@ With real-time updates and customizable notifications, GC is perfect for fans wh
        > You can generate tests by typing /tests participant in GitHub Copilot Chat
 
 11. **Lets Create a Player info feature, Under lib folder there is a a file called player-info.ts with nba player stats, you need to build an api route and react component based on player stats using file attach option in the chat, the route already exists under /src/app/api/player-info/route.ts**
-   - In GitHub Chat, use @github #web participants to learn how to handle routes in a Next.js 14 application.
+   - In GitHub Copilot Chat, use #websearch participants to learn how to handle routes in a Next.js 14 application.
    - Open /src/app/api/player-info/route.ts file
-   - Open GitHub Copilot Chat and attach the files /src/lib/player-info.ts and /src/app/(dashboard)/player-info/page.tsx as references. You can do this by using the #file participant command or by pressing the attachment button in the chat.
+   - Open GitHub Copilot Chat, select Copilot Edits Tab, from the drop down menu select Edit mode and select Claude 3.5 Sonnet model,  
+   - Attach the files /src/lib/player-info.ts and /src/app/(dashboard)/player-info/page.tsx as references. You can do this by using the #file participant command or by pressing the attachment button in the chat.
    - Now, create a route based on the player-info file that fetches only the id, name, team, weight, height, and position properties. In the same command, ask Copilot to generate a component that displays a list of player information with all these fields,Ensure each player is displayed in a separate card.
       > Use Tailwindcss and shadcn in your prompt to style the output
    - You can test your api route with GET request: http://localhost:3000/api/player-info
@@ -167,9 +168,31 @@ With real-time updates and customizable notifications, GC is perfect for fans wh
       -  The "Summarize with AI" button is already in your code but isn’t functional yet. Your goal is to use Copilot to create a handler function that calls the API route, summarizes the transcript, and displays it at the bottom of the card. As a bonus, try implementing a loading state to disable the button and show a loading indicator while the summary is being generated.
          > You can implement this feature using either chat or inline code. Use @github #web to assist you in completing the task.
       - Test the ui feature. 
+  
+13. **Add Stadiums feature using GitHub Copilot Agents** 
+    GitHub Copilot’s new agent mode is capable of iterating on its own code, recognizing errors, and fixing them automatically. It can suggest terminal commands and ask you to execute them. It also analyzes run-time errors with self-healing capabilities.
+    -  Open GitHub Copilot Chat, select Copilot Edits Tab, from the drop down menu select Agent mode and select Claude 3.5 Sonnet model.
+    -  Include a prompt to generate a new Stadium feature—clearly specify the exact instructions for your desired action. For example:
+       
+      ```
+      Let's enhance this application by adding an NBA Stadiums page.
+       1. First, create a JSON file containing sample stadium data.
+       2. Then, set up a Next.js API route to serve the stadium data from the JSON file.
+       3. Build a React component that displays the stadium information as cards.
+       4. Add a navigation link to this new component in the main navigation page.
+       5. Use Tailwind CSS and ShadCN components to style the UI.
+     ```
+     - Review the output and monitor live changes in your codebase. The agent will analyze your file structure, determine appropriate locations for adding files, and handle the additions accordingly. Be sure to accept or reject each step suggested by the agent.
+     - Open the app to verify that the Stadiums navigation tab, the REST API endpoint, and the corresponding React component have been successfully added.
+14.  **Add a login screen using Github Copilot Vision**
+     You can now attach images and work with them directly in Copilot Chat. Share screenshots of errors and Copilot will interpret the image and resolve the issue. Or share mockups of new designs, and Vision will help you bring them to life.
+     - Open the Copilot Chat and select Gpt-4o model 
+     - Navigate to the image folder located at the root of your project, select the login.png file, and attach it to your chat.
+     - Now, create a React login component based on the attached image. For example: ```Write a React component code based on login.png image```
+     - Optionally, you can activate agent mode to build the complete flow.
+     - Integrate the component into your application.
 
-
-11. **GitHub Copilot Extensions**
+15. **GitHub Copilot Extensions**
    Through a growing partner ecosystem, Copilot Extensions enables developers to build and deploy to the cloud in their natural language with their preferred tools and services, all without leaving the IDE or GitHub.com. With Copilot and now Copilot Extensions, developers can stay in the flow longer, uplevel their skills, and innovate faster.
    - In VSCode please open the GitHub Copilot Chat 
    - Type the prompt: ```Generate a Dockerfile to containerize a Next.js 14 application``` and see the results

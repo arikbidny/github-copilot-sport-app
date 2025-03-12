@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { SettingsIcon, UsersIcon } from "lucide-react";
+import { SettingsIcon } from "lucide-react";
 import Link from "next/link";
 import { GoHome, GoHomeFill } from "react-icons/go";
 
@@ -7,7 +7,7 @@ import { CiBasketball } from "react-icons/ci";
 import { FaBasketball } from "react-icons/fa6";
 import { IoPeopleOutline, IoPeopleSharp } from "react-icons/io5";
 import { SiGithubcopilot } from "react-icons/si";
-import { MdOutlineSportsHandball } from "react-icons/md";
+import { MdOutlineSportsHandball, MdStadium } from "react-icons/md";
 
 const routes = [
   {

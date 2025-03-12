@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Card,
   CardHeader,
@@ -19,7 +20,7 @@ interface Player {
 }
 
 const PlayersInfo = () => {
-  return <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6"></div>;
+  return <div>Players info</div>;
 };
 
 export default PlayersInfo;
