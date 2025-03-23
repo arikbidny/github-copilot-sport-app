@@ -33,3 +33,10 @@ Let's enhance this application by adding an NBA Stadiums page.
 3. Build a React component that displays the stadium information as cards.
 4. Add a navigation link to this new component in the main navigation page.
 5. Use Tailwind CSS and ShadCN components to style the UI.
+6. run the app with bun run dev
+
+
+Dependency Checking with Devops:
+
+Create a Github action for dependency auditing with depcheck and issue posting.
+Separate dependabot workflow for managing outdated dependencies.

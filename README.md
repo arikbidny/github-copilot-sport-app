@@ -32,10 +32,10 @@ With real-time updates and customizable notifications, GC is perfect for fans wh
    - Press on GitHub Copilot icon to open a chat
    - Explore the app by asking a questions like:
       - Can you tell me about this repository? 
-      - What framework the repository using? 
-      - Where the api routes handled out ?  
-      - Which API routes the repository includes ?
-      - Where are the main ui components ? 
+      - What framework is the repository using?
+      - Where are the API routes handled out?  
+      - Which API routes does the repository include?
+      - Where are the main UI components? 
       - What packages is the app using?
   
 2.  **Clone the repository to your local environment**
@@ -88,7 +88,7 @@ With real-time updates and customizable notifications, GC is perfect for fans wh
 
 6. **Add Comments to Code:** 
    One of the common frustrations for developers is documenting their code properly, but don’t worry—Copilot is here to help!:
-   - Open /src/api/nba-results/route.ts
+   - Open /src/app/api/nba-results/route.ts
    - Use GitHub Copilot Chat to gain insights into the code. Simply select the code and choose the /explain option for a detailed breakdown.
    - Select the entire function, then press cmd+i on MacOS or ctrl+i on Windows. Next, type /doc.
     > GitHub Copilot will generate a documentation-style function declaration.
@@ -143,7 +143,7 @@ With real-time updates and customizable notifications, GC is perfect for fans wh
        > You can generate tests by typing /tests participant in GitHub Copilot Chat
 
 11. **Lets Create a Player info feature, Under lib folder there is a a file called player-info.ts with nba player stats, you need to build an api route and react component based on player stats using file attach option in the chat, the route already exists under /src/app/api/player-info/route.ts**
-   - In GitHub Copilot Chat, use #websearch participants to learn how to handle routes in a Next.js 14 application.
+   - In GitHub Copilot Chat, use @github #web participants to learn how to handle routes in a Next.js 14 application.
    - Open /src/app/api/player-info/route.ts file
    - Open GitHub Copilot Chat, select Copilot Edits Tab, from the drop down menu select Edit mode and select Claude 3.5 Sonnet model,  
    - Attach the files /src/lib/player-info.ts and /src/app/(dashboard)/player-info/page.tsx as references. You can do this by using the #file participant command or by pressing the attachment button in the chat.
