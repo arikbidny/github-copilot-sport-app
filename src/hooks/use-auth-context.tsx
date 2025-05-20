@@ -32,13 +32,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     }
   }, []);
+
   const checkSession = async (token: string) => {
     try {
       setLoading(true);
       
-      const response = await fetch("/api/auth/session", {
+      const response = await fetch('/api/auth/session', {
         headers: {
-          "Authorization": `******        }
+          'Authorization': `******        }
       });
       
       const data = await response.json();

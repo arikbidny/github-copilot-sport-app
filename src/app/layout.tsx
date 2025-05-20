@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 import "./globals.css";
 import { QueryProvider } from "@/components/query-provider";
-import { AuthProvider } from "@/hooks/use-auth";
+import { AuthProvider } from "@/hooks/auth-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 

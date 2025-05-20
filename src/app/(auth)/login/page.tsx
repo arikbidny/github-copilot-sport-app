@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { AuthForm } from "@/components/auth-form";
-import { useAuth } from "@/hooks/use-auth";
+import { useAuth } from "@/hooks/auth-provider";
 
 export default function LoginPage() {
   const [isLogin, setIsLogin] = useState<boolean>(true);

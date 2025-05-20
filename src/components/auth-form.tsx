@@ -15,7 +15,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useAuth } from "@/hooks/use-auth";
+import { useAuth } from "@/hooks/auth-provider";
 
 // Define form schemas
 const loginSchema = z.object({

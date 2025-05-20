@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import { User } from '@/lib/db';
 
 interface AuthContextType {
@@ -18,47 +18,8 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<Partial<User> | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Check for saved token on mount
-    if (typeof window !== 'undefined') {
-      const token = localStorage.getItem('auth-token');
-      if (token) {
-        checkSession(token);
-      } else {
-        setLoading(false);
-      }
-    }
-  }, []);
-  const checkSession = async (token: string) => {
-    try {
-      setLoading(true);
-      
-      const response = await fetch("/api/auth/session", {
-        headers: {
-          "Authorization": `******        }
-      });
-      
-      const data = await response.json();
-      
-      if (data.authenticated && data.user) {
-        setUser(data.user);
-      } else {
-        // Invalid token, remove it
-        localStorage.removeItem('auth-token');
-        setUser(null);
-      }
-    } catch (err) {
-      console.error('Session check failed:', err);
-      setError('Failed to authenticate');
-      localStorage.removeItem('auth-token');
-      setUser(null);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const login = async (email: string, password: string) => {
     try {
@@ -79,7 +40,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       
       // Save token and user data
-      localStorage.setItem('auth-token', data.token);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('auth-token', data.token);
+      }
       setUser(data.user);
       return true;
     } catch (err) {
@@ -110,7 +73,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       
       // Save token and user data
-      localStorage.setItem('auth-token', data.token);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('auth-token', data.token);
+      }
       setUser(data.user);
       return true;
     } catch (err) {
@@ -127,9 +92,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(true);
       setError(null);
       
-      // In a real app, we would redirect to GitHub OAuth
-      // Here we'll simulate a successful OAuth response
-      
       const response = await fetch('/api/auth/github', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -144,7 +106,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       
       // Save token and user data
-      localStorage.setItem('auth-token', data.token);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('auth-token', data.token);
+      }
       setUser(data.user);
       return true;
     } catch (err) {
@@ -161,9 +125,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(true);
       setError(null);
       
-      // In a real app, we would redirect to Google OAuth
-      // Here we'll simulate a successful OAuth response
-      
       const response = await fetch('/api/auth/google', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -178,7 +139,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       
       // Save token and user data
-      localStorage.setItem('auth-token', data.token);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('auth-token', data.token);
+      }
       setUser(data.user);
       return true;
     } catch (err) {
@@ -191,7 +154,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const logout = () => {
-    localStorage.removeItem('auth-token');
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('auth-token');
+    }
     setUser(null);
   };
 
