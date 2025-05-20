@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 import "./globals.css";
 import { QueryProvider } from "@/components/query-provider";
+import { AuthProvider } from "@/hooks/use-auth";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,8 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "antialiased min-h-screen")}>
         <QueryProvider>
-          <Toaster />
-          {children}
+          <AuthProvider>
+            <Toaster />
+            {children}
+          </AuthProvider>
         </QueryProvider>
       </body>
     </html>
