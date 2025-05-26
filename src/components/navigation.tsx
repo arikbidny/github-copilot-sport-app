@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { SettingsIcon, UsersIcon } from "lucide-react";
+import { InfoIcon, SettingsIcon, UsersIcon } from "lucide-react";
 import Link from "next/link";
 import { GoHome, GoHomeFill } from "react-icons/go";
 
@@ -8,6 +8,7 @@ import { FaBasketball } from "react-icons/fa6";
 import { IoPeopleOutline, IoPeopleSharp } from "react-icons/io5";
 import { SiGithubcopilot } from "react-icons/si";
 import { MdOutlineSportsHandball } from "react-icons/md";
+import { IoInformationCircleOutline, IoInformationCircle } from "react-icons/io5";
 
 const routes = [
   {
@@ -33,6 +34,12 @@ const routes = [
     href: "/press-conferences",
     icon: IoPeopleOutline,
     activeIcon: IoPeopleSharp,
+  },
+  {
+    label: "About",
+    href: "/about",
+    icon: IoInformationCircleOutline,
+    activeIcon: IoInformationCircle,
   },
   {
     label: "Optimization",
