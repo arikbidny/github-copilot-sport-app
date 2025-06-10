@@ -6,8 +6,9 @@ import { Navigation } from "./navigation";
 export const Sidebar = () => {
   return (
     <aside className="h-full bg-neutral-100 p-4 w-full">
-      <Link href="/">
-        <Image src="/logo.svg" alt="logo" width={164} height={48} /> <br />{" "}
+      <Link href="/" className="flex items-center gap-1.5">
+        <Image src="/basketball-logo.svg" alt="logo" width={32} height={32} />{" "}
+        <br />{" "}
         <span className="bg-[#E5FF00] text-black font-semibold">
           GitHub Copilot Training
         </span>

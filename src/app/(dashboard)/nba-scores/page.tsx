@@ -1,11 +1,26 @@
 import React from "react";
 
 export default async function NBAScores() {
-  let data = await fetch("http://localhost:3001/api/nba-results");
-  let games = await data.json();
+  const url = new URL("https://apiv2.allsportsapi.com/basketball/");
+
+  const params = {
+    met: "Fixtures",
+    APIkey: process.env.NEXT_PUBLIC_NBA_API_KEY,
+    from: "2024-10-01",
+    to: "2024-10-29",
+    leagueId: 766,
+  };
+  const urlWithParams = `${url}?${new URLSearchParams(
+    params as any
+  ).toString()}`;
+
+  const response = await fetch(urlWithParams);
+  const games = await response.json();
 
   const results = games.result;
+
   console.log(results);
+
   return (
     <div>
       <h1 className="text-2xl font-bold">NBA Scores</h1>

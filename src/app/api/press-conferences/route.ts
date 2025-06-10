@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
-  // Create an array of press conferences from NBA games that have been played
   const pressConferences = [
     {
       title:
