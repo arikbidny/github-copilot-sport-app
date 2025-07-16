@@ -1,7 +1,7 @@
 import ConferenceCard from "@/components/conference-card";
 
 export default async function PressConferences() {
-  const data = await fetch("http://localhost:3003/api/press-conferences");
+  const data = await fetch("http://localhost:3000/api/press-conferences");
   const PressConferences = await data.json();
 
   return (
