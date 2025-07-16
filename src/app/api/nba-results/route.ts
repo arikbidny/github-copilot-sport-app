@@ -12,6 +12,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  // Set up the API request parameters
   const params = {
     APIkey: apiKey,
     met: "Fixtures",
