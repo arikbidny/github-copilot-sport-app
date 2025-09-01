@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
 import { QueryProvider } from "@/components/query-provider";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sports - GitHub Copilot Workshop",
@@ -21,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "antialiased min-h-screen")}>
+      <body className={cn("antialiased min-h-screen font-sans")}>
         <QueryProvider>
           <Toaster />
           {children}
