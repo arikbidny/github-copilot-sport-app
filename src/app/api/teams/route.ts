@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
       count: teams.length,
       success: true
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to fetch teams", success: false },
       { status: 500 }
