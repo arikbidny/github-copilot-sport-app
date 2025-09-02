@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { SettingsIcon, UsersIcon } from "lucide-react";
+import { SettingsIcon, UsersIcon, Newspaper, Heart } from "lucide-react";
 import Link from "next/link";
 import { GoHome, GoHomeFill } from "react-icons/go";
 
@@ -15,6 +15,12 @@ const routes = [
     href: "/",
     icon: GoHome,
     activeIcon: GoHomeFill,
+  },
+  {
+    label: "News Feed",
+    href: "/news-feed",
+    icon: Newspaper,
+    activeIcon: Newspaper,
   },
   {
     label: "NBA Scores",
@@ -33,6 +39,12 @@ const routes = [
     href: "/press-conferences",
     icon: IoPeopleOutline,
     activeIcon: IoPeopleSharp,
+  },
+  {
+    label: "Settings",
+    href: "/settings",
+    icon: Heart,
+    activeIcon: Heart,
   },
   {
     label: "Optimization",
